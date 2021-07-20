@@ -1,8 +1,16 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { Text, StyleSheet, View } from 'react-native'
 
 const ComponentsScreen = () => {
-  return <Text style={styles.textStyle}>This is the components screen</Text>
+  const greeting = 'Hello there!'
+  const jsxGreeting = <Text>'Hello from JSX!'</Text>
+  return (
+    <View>
+      <Text style={styles.textStyle}>This is the components screen</Text>
+      <Text>{greeting}</Text>
+      {jsxGreeting}
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
