@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 
-const ImageDetail = ({ title, imageURL, imagePath }) => {
+const ImageDetail = ({ title, imageURL, imagePath, rating }) => {
   return (
     <View>
       <Image
@@ -9,6 +9,7 @@ const ImageDetail = ({ title, imageURL, imagePath }) => {
         style={styles.imageStyle}
       />
       <Text>{title}</Text>
+      <Text>Image Rating - {rating}</Text>
     </View>
   )
 }
