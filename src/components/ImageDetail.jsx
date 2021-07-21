@@ -2,12 +2,21 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 
 const ImageDetail = ({ title, imageURL, imagePath }) => {
-  return (
-    <View>
-      <Text>{title}</Text>
-      <Image source={{ uri: imageURL }} style={styles.imageStyle} />
-    </View>
-  )
+  if (imagePath) {
+    return (
+      <View>
+        <Text>{title}</Text>
+        <Image source={imagePath} style={styles.imageStyle} />
+      </View>
+    )
+  } else {
+    return (
+      <View>
+        <Text>{title}</Text>
+        <Image source={{ uri: imageURL }} style={styles.imageStyle} />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
