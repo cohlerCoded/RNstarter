@@ -6,10 +6,10 @@ const CounterScreen = () => {
   const decrease = () => setCount(count - 1)
   return (
     <View>
-      <Text>Current Count</Text>
-      <Text>{count}</Text>
       <Button onPress={increase} title='Increase' />
       <Button onPress={decrease} title='Decrease' />
+      <Text>Current Count</Text>
+      <Text>{count}</Text>
     </View>
   )
 }
