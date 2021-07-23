@@ -3,9 +3,6 @@ import { View, FlatList, StyleSheet, Button } from 'react-native'
 
 const ColorScreen = () => {
   const [colors, setColors] = useState([])
-
-  console.log(colors)
-
   const randomRgb = () => {
     const r = Math.floor(Math.random() * 256)
     const g = Math.floor(Math.random() * 256)
