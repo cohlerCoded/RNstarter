@@ -15,6 +15,8 @@ const SquareScreen = () => {
     else return color + change
   }
 
+  console.log('test')
+
   return (
     <View>
       <ColorCounter
