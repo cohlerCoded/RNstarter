@@ -9,22 +9,28 @@ const SquareScreen = () => {
 
   const COLOR_ADJUST_NUMBER = 15
 
+  const setColor = (color, change) => {
+    if (color + change > 255) return 255
+    if (color + change < 0) return 0
+    else return color + change
+  }
+
   return (
     <View>
       <ColorCounter
         color='Red'
-        onIncrease={() => setRed(red + COLOR_ADJUST_NUMBER)}
-        onDecrease={() => setRed(red - COLOR_ADJUST_NUMBER)}
+        onIncrease={() => setRed(setColor(red, COLOR_ADJUST_NUMBER))}
+        onDecrease={() => setRed(setColor(red, -1 * COLOR_ADJUST_NUMBER))}
       />
       <ColorCounter
         color='Blue'
-        onIncrease={() => setBlue(blue + COLOR_ADJUST_NUMBER)}
-        onDecrease={() => setBlue(blue - COLOR_ADJUST_NUMBER)}
+        onIncrease={() => setBlue(setColor(blue, COLOR_ADJUST_NUMBER))}
+        onDecrease={() => setBlue(setColor(blue, -1 * COLOR_ADJUST_NUMBER))}
       />
       <ColorCounter
         color='Green'
-        onIncrease={() => setGreen(green + COLOR_ADJUST_NUMBER)}
-        onDecrease={() => setGreen(green - COLOR_ADJUST_NUMBER)}
+        onIncrease={() => setGreen(setColor(green, COLOR_ADJUST_NUMBER))}
+        onDecrease={() => setGreen(setColor(green, -1 * COLOR_ADJUST_NUMBER))}
       />
       <View
         style={{
