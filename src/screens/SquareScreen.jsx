@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 import { View, FlatList, StyleSheet, Button, Text } from 'react-native'
 import ColorCounter from '../components/ColorCounter'
 
@@ -20,28 +20,36 @@ const COLOR_ADJUST_NUMBER = 15
 
 const SquareScreen = () => {
   const [state, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 })
-  const setColor = (color, change) => {
-    if (color + change > 255) return 255
-    if (color + change < 0) return 0
-    else return color + change
-  }
+  const { red, green, blue } = state
 
   return (
     <View>
       <ColorCounter
         color='Red'
-        onIncrease={() => }
-        onDecrease={() => }
-      />
-      <ColorCounter
-        color='Blue'
-        onIncrease={() => }
-        onDecrease={() => }
+        onIncrease={() =>
+          dispatch({ colorToChange: 'red', amount: COLOR_ADJUST_NUMBER })
+        }
+        onDecrease={() =>
+          dispatch({ colorToChange: 'red', amount: -1 * COLOR_ADJUST_NUMBER })
+        }
       />
       <ColorCounter
         color='Green'
-        onIncrease={() => }
-        onDecrease={() => }
+        onIncrease={() =>
+          dispatch({ colorToChange: 'green', amount: COLOR_ADJUST_NUMBER })
+        }
+        onDecrease={() =>
+          dispatch({ colorToChange: 'green', amount: -1 * COLOR_ADJUST_NUMBER })
+        }
+      />
+      <ColorCounter
+        color='Blue'
+        onIncrease={() =>
+          dispatch({ colorToChange: 'blue', amount: COLOR_ADJUST_NUMBER })
+        }
+        onDecrease={() =>
+          dispatch({ colorToChange: 'blue', amount: -1 * COLOR_ADJUST_NUMBER })
+        }
       />
       <View
         style={{
