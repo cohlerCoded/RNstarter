@@ -13,6 +13,7 @@ const HomeScreen = ({ navigation }) => {
       <Button title='Colors Demo' onPress={() => navigate('Colors')} />
       <Button title='Square Demo' onPress={() => navigate('Square')} />
       <Button title='Text Demo' onPress={() => navigate('Text')} />
+      <Button title='Box Demo' onPress={() => navigate('Box')} />
     </View>
   )
 }
