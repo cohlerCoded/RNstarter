@@ -19,16 +19,17 @@ const styles = StyleSheet.create({
   textOneStyle: {
     borderWidth: 3,
     borderColor: 'red',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
   },
   textTwoStyle: {
     borderWidth: 3,
     borderColor: 'red',
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
   },
   textThreeStyle: {
     borderWidth: 3,
     borderColor: 'red',
+    position: 'absolute',
     alignSelf: 'stretch',
   },
 })
